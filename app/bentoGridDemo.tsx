@@ -65,7 +65,7 @@ const items = [
     <div className="flex flex-1 justify-center w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100">
     <div className="flex items-center justify-center"> {/* Center the content */}
       <div className="flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100"> {/* Circular shape */}
-       <img src="/bnym6clea.svg"  style={{ maxWidth: "100%", maxHeight: "100%" }} className="object-center" /> {/* Center the image */}
+       <img src="/bnym6.svg"  style={{ maxWidth: "100%", maxHeight: "100%" }} className="object-center" /> {/* Center the image */}
   </div>
 </div>
 </div>
