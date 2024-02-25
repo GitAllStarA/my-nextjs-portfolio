@@ -14,7 +14,7 @@ export const EvervaultCard = ({
   let mouseX = useMotionValue(0);
   let mouseY = useMotionValue(0);
 
-  const [randomString, setRandomString] = useState("");
+  const [randomString, setRandomString] = useState<string[]>([]);
 
   useEffect(() => {
     //let str = generateRandomString(1500);
