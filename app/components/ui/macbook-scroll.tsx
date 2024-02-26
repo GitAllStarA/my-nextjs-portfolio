@@ -25,6 +25,8 @@ import { IconCaretLeftFilled } from "@tabler/icons-react";
 import { IconCaretDownFilled } from "@tabler/icons-react";
 import Image from "next/image";
 import {EvervaultCardDemo} from '../../evervaultCardDemo';
+import {WavyBackgroundDemo} from "../../wavyBackgroundDemo";
+
 
 export const MacbookScroll = ({
   src,
@@ -70,8 +72,10 @@ export const MacbookScroll = ({
     <div
       ref={ref}
       className="min-h-[150vh]  flex flex-col items-center py-0 md:py-31 justify-start flex-shrink-0 [perspective:800px] transform md:scale-100  scale-[0.35] sm:scale-50"
-    >
+    >      
+
       <EvervaultCardDemo/>
+   
       <motion.h2
         style={{
           translateY: textTransform,

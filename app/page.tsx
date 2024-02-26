@@ -1,16 +1,24 @@
 import Image from "next/image";
 import { MeteorsDemo } from "./meteorsDemo";
 import {MacbookScrollDemo} from "./macbookScrollDemo";
+import { MovingBorderDemo } from "./mvoingBorderDemo";
 import {WavyBackgroundDemo} from "./wavyBackgroundDemo";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
+    <div>
+      <div style={{position:'relative'}}>
+      <div style={{ position: 'absolute', top: 'calc(50% - 50px)', left: 0, right: 0, transform: 'translateY(-20%)' }}>
+    <WavyBackgroundDemo />
+    </div>
+
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}>
+        <main className="flex min-h-screen flex-col items-center justify-between p-24">
+          <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
         {/* <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30"> */}
         <div className="dark:text-white text-neutral-800 text-3xl font-bold mb-20 text-center">
           <a className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0" href="https://www.linkedin.com/in/vikranth-a-5898281b2/">
-            &nbsp;VkxtR&nbsp;
+            <MovingBorderDemo str="VkxtR"></MovingBorderDemo>
           </a>
         </div>
         {/* </p> */}
@@ -41,8 +49,9 @@ export default function Home() {
 
       </div> */}
       <MacbookScrollDemo></MacbookScrollDemo>
-
-
     </main>
+    </div>
+    </div>
+    </div>
   );
 }
