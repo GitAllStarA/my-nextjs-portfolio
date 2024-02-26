@@ -28,8 +28,6 @@ export const EvervaultCard = ({
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
 
-    //const str = generateRandomString(1500);
-    //setRandomString(str);
     const str2 = generateRandomSkillString(2000);
     setRandomString(str2);
 
@@ -71,7 +69,7 @@ export const EvervaultCard = ({
 };
 
 export function CardPattern({ mouseX, mouseY, randomString }: any) {
-  let maskImage = useMotionTemplate`radial-gradient(500px at ${mouseX}px ${mouseY}px, white, transparent)`;
+  let maskImage = useMotionTemplate`radial-gradient(550px at ${mouseX}px ${mouseY}px, white, transparent)`;
   let style = { maskImage, WebkitMaskImage: maskImage };
 
   return (
@@ -103,21 +101,28 @@ export const generateRandomString = (length: number) => {
   return result;
 };
 
-const skillsString: string[] = ["Java", "Gaming", "Volley Ball", "Artificial Intelligence", "Xbox", "Red Dead Redemption 2", "Forza 5", "GTA V", 
+const skillsString: string[] = ["Jai Shri Raam" ,"Jai Hanuman", "Jai Limbadri Narasimha Swami", "Om Namah Shivaya", "Jai Shri Krishna", "Om Sham Shanischarya Namaha", "Jai Matadi" ,"Java", "Gaming", "Volley Ball", "Artificial Intelligence", "Xbox", "Red Dead Redemption 2", "Forza 5", "GTA V", 
 "React", "Angular", "Machine Learning", "Cloud Computing", "AWS", "Azure", "GCP","JavaScript", "TypeScript", "CSS","HTML",
 "Tailwindcss", "Xcode", "Spring boot", "Spring", "Hibernate", "Docker", "Kubernetes", "Redis", "Mongo", "Mysql", "Git", "Gihub", "SpaCy3.0",
 "Postman", "VScode", "IntelliJ", "Jupyter", "Python", "Shell", "PowerShell", "Nginix", "kafka", "Agile", "MySQL", "JUnit", "LWC", "Apex", "Netflix Zuul",
 "Spring Cloud", "Ruby on Rails", "Jenkins", "Splunk", "Mockito", "Core Java", "Tomcat", "Vercel", "Netlify", "Singleton", "Builder", "Factory", "DSA", "Leetcode",
 "JSON", "Rest", "XML", "TDD", "BDD", "Windows", "MacOS", "Linux", "Ubuntu", "SailPoint", "SalesForce", "Saviynt", "Kaggle", "Whisper OpenAI", "Hugging Face", "LLMS", 
 "GPT", "Prompt Engineering", "Kanban", "SDLC","Photography", "Smart Phone Photography", "Running",
- "The Office", "Friends", "Game of Thrones", "Breaking Bad",
-"Driving", "Making Donuts", "Burnouts", "Mustang GT", "Ford", 
+ "The Office", "Friends", "Game of Thrones", "Breaking Bad", "Biryani", "Pani Puri", "Samosa Chat", "Shrimp Scampi", "Stonks" ,"DogeCoin", "Shiba Inu", "BitCoin",
+ "S&P 500", "QQQ", "AMC", "GameStop", "BigShot", "Chistane Bale", "Batman", "Ironman",
+"Driving", "Making Donuts", "Burnouts", "Mustang GT", "Ford", "Jack of All Trades, Master of none"
 //  "💻","🚶🏻","🏐","🙏🏻","👓","🥦","🥃","🍺","⛅️"
 ];
 const generateRandomSkillString = (length: number) => {
   let result = [];
   for (let i=0;i<length;i++) {
-    result.push(' '+skillsString[Math.floor(Math.random() * skillsString.length)]+' ');
+    let str = skillsString[Math.floor(Math.random() * skillsString.length)];
+    if(str === "Jack of All Trades, Master of none")
+    {
+      result.push(">>>>> "+str.toLocaleUpperCase()+" <<<<<")
+    } else {
+    result.push(' '+str+' ');
+    }
   }
   return result;
 }

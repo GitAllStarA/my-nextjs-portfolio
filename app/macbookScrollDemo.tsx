@@ -10,10 +10,7 @@ import { ParallaxScrollDemo } from "./parallaxScrollDemoo";
 
 export const MacbookScrollDemo = () => {
 
-  const words= ` Hello there! I'm a Motivated Software Engineer and AI/ML Enthusiast with over 5+ years of experience in React, Angular, 
-  Lightning Web Components, and Java Springboot. I'm also passionate about photography. 
-  Currently, I'm seeking a challenging role to leverage my expertise in Web services, software design, 
-  cloud computing, and troubleshooting within a dynamic and collaborative team`;
+  const words= ` Hello there! I'm a Motivated Software Engineer and AI/ML Enthusiast with over 5+ years of experience in React, Angular, Lightning Web Components, and Java Springboot. I'm also passionate about photography. Currently, I'm seeking a challenging role to leverage my expertise in Web services, software design, cloud computing, and troubleshooting within a dynamic and collaborative team`;
    return (
     <div>
       <div className="overflow-hidden dark:bg-[rgba(11, 11, 15, 0.5)] bg-[rgba(255, 255, 255, 0.5)] w-full">
@@ -95,7 +92,7 @@ export const MacbookScrollDemo = () => {
             rel="noopener noreferrer"
           >
             <h2 className={`mb-3 text-2xl font-semibold`}>
-              Portfolio Components{" "}
+              Components {" "}
               <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                 -&gt;
               </span>
@@ -105,25 +102,15 @@ export const MacbookScrollDemo = () => {
             </p>
           </a>
         </div>
-        <div 
-        style={
-        {
-          display: "flex",
-          flex:"flex-column",
-        }
-        }>
-          <p style={{paddingRight:"900px",  fontSize: "60px"}}>Work experience</p>
-          <p style={{paddingLeft:"1000px", fontSize: "60px"}}>Photography</p>
+        <div style={{overflow:"hidden", display: "flex", flexDirection:"row", alignItems:"center", justifyContent:"space-between"}}>
+          <p style={{paddingRight: "500px", marginBottom: "3rem", fontSize: "2rem", fontWeight: "600"}} >Career history</p>
+          <p style={{ marginBottom: "3rem", fontSize: "2rem", fontWeight: "600" }}>Photojournalism</p>
         </div> 
-        <div style={
-        {
-          display: "flex",
-          flex:"flex-column"
-        }
-      }>
-        <BentoGridDemo/>        
-        <ParallaxScrollDemo />
-      </div>
+        
+        <div style={{display: "flex", flexDirection:"row", overflow:"hidden"}}>
+          <BentoGridDemo/>    
+          <ParallaxScrollDemo />
+        </div>
       </div>
     </div>
   );

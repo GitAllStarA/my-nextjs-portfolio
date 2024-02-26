@@ -7,8 +7,8 @@ export function MovingBorderDemo({str}:{str:string}) {
     <div>
       <Button
         borderRadius="1.75rem"
-        className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800"
-      >
+        className="w-full bg-white dark:bg-slate-900 bg-opacity-50 dark:bg-opacity-50 text-black dark:text-white border-neutral-200 dark:border-slate-800"
+        >
         {str}
       </Button>
     </div>
