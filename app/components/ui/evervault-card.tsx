@@ -109,7 +109,11 @@ const skillsString: string[] = ["Java", "Gaming", "Volley Ball", "Artificial Int
 "Postman", "VScode", "IntelliJ", "Jupyter", "Python", "Shell", "PowerShell", "Nginix", "kafka", "Agile", "MySQL", "JUnit", "LWC", "Apex", "Netflix Zuul",
 "Spring Cloud", "Ruby on Rails", "Jenkins", "Splunk", "Mockito", "Core Java", "Tomcat", "Vercel", "Netlify", "Singleton", "Builder", "Factory", "DSA", "Leetcode",
 "JSON", "Rest", "XML", "TDD", "BDD", "Windows", "MacOS", "Linux", "Ubuntu", "SailPoint", "SalesForce", "Saviynt", "Kaggle", "Whisper OpenAI", "Hugging Face", "LLMS", 
-"GPT", "Prompt Engineering", "Kanban", "SDLC"];
+"GPT", "Prompt Engineering", "Kanban", "SDLC","Photography", "Smart Phone Photography", "Running",
+ "The Office", "Friends", "Game of Thrones", "Breaking Bad",
+"Driving", "Making Donuts", "Burnouts", "Mustang GT", "Ford", 
+//  "💻","🚶🏻","🏐","🙏🏻","👓","🥦","🥃","🍺","⛅️"
+];
 const generateRandomSkillString = (length: number) => {
   let result = [];
   for (let i=0;i<length;i++) {

@@ -1,105 +1,131 @@
 import React from "react";
 import { MacbookScroll } from "../app/components/ui/macbook-scroll";
-import {MeteorsDemo} from "./meteorsDemo";
+import { MeteorsDemo } from "./meteorsDemo";
 import Link from "next/link";
-import {BentoGridDemo} from "./bentoGridDemo";
-import {TextGenerateEffectDemo} from "./textGenerationEffectDemo";
-import {WavyBackgroundDemo} from "./wavyBackgroundDemo";
+import { useState, useEffect } from "react";
+import { BentoGridDemo } from "./bentoGridDemo";
+import { TextGenerateEffectDemo } from "./textGenerationEffectDemo";
+import { WavyBackgroundDemo } from "./wavyBackgroundDemo";
+import { ParallaxScrollDemo } from "./parallaxScrollDemoo";
 
 export const MacbookScrollDemo = () => {
-  return (
+
+  const words= ` Hello there! I'm a Motivated Software Engineer and AI/ML Enthusiast with over 5+ years of experience in React, Angular, 
+  Lightning Web Components, and Java Springboot. I'm also passionate about photography. 
+  Currently, I'm seeking a challenging role to leverage my expertise in Web services, software design, 
+  cloud computing, and troubleshooting within a dynamic and collaborative team`;
+   return (
     <div>
-<div className="overflow-hidden dark:bg-[rgba(11, 11, 15, 0.5)] bg-[rgba(255, 255, 255, 0.5)] w-full">
-      <MacbookScroll
-        title={
-          <span>
-            {/* This is my portfolio. <br /> */}
-            <TextGenerateEffectDemo></TextGenerateEffectDemo>
-          </span>
+      <div className="overflow-hidden dark:bg-[rgba(11, 11, 15, 0.5)] bg-[rgba(255, 255, 255, 0.5)] w-full">
+        <MacbookScroll
+          title={
+            <span>
+              {/* This is my portfolio. <br /> */}
+              
+              <TextGenerateEffectDemo words={words}></TextGenerateEffectDemo>
+            </span>
+          }
+          badge={
+            <Link href="https://peerlist.io/manuarora">
+              <Badge className="h-10 w-10 transform -rotate-12" />
+            </Link>
+          }
+          src={`/linear.webp`}
+          showGradient={false}
+        />
+      </div>
+      <div className="flex min-h-screen flex-col items-center justify-between p-24">
+        <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
+          <a
+            href="https://www.linkedin.com/in/vikranth-a-5898281b2/"
+            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h2 className={`mb-3 text-2xl font-semibold`}>
+              LinkedIn{" "}
+              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                -&gt;
+              </span>
+            </h2>
+            <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
+              Software Engineer | AI/ML Enthusiast
+            </p>
+          </a>
+          <a
+            href="https://open.spotify.com/user/31kkf3qyprjjmhecrp2zkgcqysda"
+            className="group rounded-lg border border-transparent px-5 py-4 
+               transition-colors hover:border-gray-300 hover:bg-gray-100 
+               hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h2 className={`mb-3 text-2xl font-semibold`}>
+              Spotify{" "}
+              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                -&gt;
+              </span>
+            </h2>
+            <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
+              My spotify playlist
+            </p>
+          </a>
+          <a
+            href="https://github.com/GitAllStarA"
+            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h2 className={`mb-3 text-2xl font-semibold`}>
+              GitHub{" "}
+              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                -&gt;
+              </span>
+            </h2>
+            <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
+
+              GitHub, where you can find all my trades
+            </p>
+          </a>
+
+          <a
+            href="https://ui.aceternity.com/components"
+            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h2 className={`mb-3 text-2xl font-semibold`}>
+              Portfolio Components{" "}
+              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                -&gt;
+              </span>
+            </h2>
+            <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
+              Copy paste the most trending components and use them in your websites.
+            </p>
+          </a>
+        </div>
+        <div 
+        style={
+        {
+          display: "flex",
+          flex:"flex-column",
         }
-        badge={
-          <Link href="https://peerlist.io/manuarora">
-            <Badge className="h-10 w-10 transform -rotate-12" />
-          </Link>
+        }>
+          <p style={{paddingRight:"900px",  fontSize: "60px"}}>Work experience</p>
+          <p style={{paddingLeft:"1000px", fontSize: "60px"}}>Photography</p>
+        </div> 
+        <div style={
+        {
+          display: "flex",
+          flex:"flex-column"
         }
-        src={`/linear.webp`}
-        showGradient={false}
-      />
+      }>
+        <BentoGridDemo/>        
+        <ParallaxScrollDemo />
+      </div>
+      </div>
     </div>
-     <div  className="flex min-h-screen flex-col items-center justify-between p-24">
-     <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-             <a
-               href="https://www.linkedin.com/in/vikranth-a-5898281b2/"
-               className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-               target="_blank"
-               rel="noopener noreferrer"
-             >
-               <h2 className={`mb-3 text-2xl font-semibold`}>
-                 LinkedIn{" "}
-                 <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                   -&gt;
-                 </span>
-               </h2>
-               <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-                Software Engineer | AI/ML Enthusiast
-               </p>
-             </a>
-             <a
-               href="https://open.spotify.com/playlist/2zy8mDVIN3SCSwbiSnOmdX?si=5cff4b0a1c614861"
-               className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-               target="_blank"
-               rel="noopener noreferrer"
-             >
-               <h2 className={`mb-3 text-2xl font-semibold`}>
-                 Spotify{" "}
-                 <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                   -&gt;
-                 </span>
-               </h2>
-               <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-                 My spotify playlist
-               </p>
-             </a>
-             <a
-               href="https://github.com/GitAllStarA"
-               className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-               target="_blank"
-               rel="noopener noreferrer"
-             >
-               <h2 className={`mb-3 text-2xl font-semibold`}>
-                 GitHub{" "}
-                 <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                   -&gt;
-                 </span>
-               </h2>
-               <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-                
-                 GitHub, where you can find all my trades
-               </p>
-             </a>
-     
-             <a
-               href="http://localhost:3000/"
-               className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-               target="_blank"
-               rel="noopener noreferrer"
-             >
-               <h2 className={`mb-3 text-2xl font-semibold`}>
-                 My Portfolio{" "}
-                 <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                   -&gt;
-                 </span>
-               </h2>
-               <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-                 My Portfolio
-               </p>
-             </a>
-     
-             
-           </div>
-           <BentoGridDemo></BentoGridDemo>
-     </div>
-     </div>
   );
 };
 

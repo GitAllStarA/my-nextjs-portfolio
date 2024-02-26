@@ -11,6 +11,7 @@ import {
 } from "@tabler/icons-react";
 import Link from "next/link";
 import Image from "next/image";
+import TextGenerateEffectDemo from "./textGenerationEffectDemo";
 
 
 export function BentoGridDemo() {

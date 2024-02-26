@@ -19,7 +19,7 @@ export function EvervaultCardDemo() {
     </div>
     <div>
       <h2 className="dark:text-white text-black  mt-1 text-sm font-light" style={{textAlign:"center"}}>
-        Hover over this card to reveal my skills
+        Hover above for skills and hobbies
       </h2>
       </div>
       </div>
