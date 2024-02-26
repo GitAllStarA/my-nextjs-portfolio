@@ -5,11 +5,8 @@ import { TextGenerateEffect } from "../app/components/ui/text-generate-effect";
 // const word2 = `As always Jack of all trades, Master of none`;
 
 
-const textProps = () => {
-  words: string | undefined;
-}
 
-export function TextGenerateEffectDemo({words}: textProps) {
+export function TextGenerateEffectDemo({words}: {words:string}) {
   return <TextGenerateEffect words={words} />;
 }
 
