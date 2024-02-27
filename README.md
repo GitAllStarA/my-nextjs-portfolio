@@ -1,4 +1,10 @@
+## About Project
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+The project is built on Next.js, leveraging the powerful UI components provided by Aceternity. Utilizing the deployment capabilities of Vercel, I was able to showcase my portfolio with ease. 
+While I aspire to craft unique and innovative components, I'm currently in the early stages of my development journey. 
+Consequently, I've adapted and customized Aceternity's components to suit the specific requirements of my portfolio.
 
 ## Getting Started
 
