@@ -2,34 +2,58 @@ import React from "react";
 import { MacbookScroll } from "../app/components/ui/macbook-scroll";
 import { MeteorsDemo } from "./meteorsDemo";
 import Link from "next/link";
-import { useState, useEffect } from "react";
 import { BentoGridDemo } from "./bentoGridDemo";
 import { TextGenerateEffectDemo } from "./textGenerationEffectDemo";
 import { WavyBackgroundDemo } from "./wavyBackgroundDemo";
 import { ParallaxScrollDemo } from "./parallaxScrollDemoo";
+import { LayoutGridDemo }from "./layoutGridDemo";
+import {ImageLoop} from "./imageLoop";
+
 
 export const MacbookScrollDemo = () => {
+  let myImages = ImageLoop();
+  let imageObjects = [];
+
+  const SkeletonOne = () => {
+    return (
+      <div>
+        <p className="font-bold text-4xl text-white">House in the woods</p>
+        <p className="font-normal text-base text-white"></p>
+        <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+          A serene and tranquil retreat, this house in the woods offers a peaceful
+          escape from the hustle and bustle of city life.
+        </p>
+      </div>
+    );
+  };
+
+  let count:number = 0;
+  let style: string = "";
+  imageObjects = myImages.map((img, index) => {
+    if (index === count){
+      style = "md:col-span-2";
+      count += 3;
+    } else {
+      style = "col-span-1";
+    }
+    let x = {
+      id: index,
+      className: style,
+      thumbnail: img,
+      content: <SkeletonOne/>
+    };
+    return x;
+  });
+
+  imageObjects = imageObjects.slice(0, 10);
+
+
 
   const words= ` Hello there! I'm a Motivated Software Engineer and AI/ML Enthusiast with over 5+ years of experience in React, Angular, Lightning Web Components, and Java Springboot. I'm also passionate about photography. Currently, I'm seeking a challenging role to leverage my expertise in Web services, software design, cloud computing, and troubleshooting within a dynamic and collaborative team`;
    return (
     <div>
       <div className="overflow-hidden dark:bg-[rgba(11, 11, 15, 0.5)] bg-[rgba(255, 255, 255, 0.5)] w-full">
-        <MacbookScroll
-          title={
-            <span>
-              {/* This is my portfolio. <br /> */}
-              
-              <TextGenerateEffectDemo words={words}></TextGenerateEffectDemo>
-            </span>
-          }
-          badge={
-            <Link href="https://peerlist.io/manuarora">
-              <Badge className="h-10 w-10 transform -rotate-12" />
-            </Link>
-          }
-          src={`/linear.webp`}
-          showGradient={false}
-        />
+        <MacbookScroll title={ <TextGenerateEffectDemo words={words}/> }/>
       </div>
       <div className="flex min-h-screen flex-col items-center justify-between p-24">
         <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
@@ -102,60 +126,17 @@ export const MacbookScrollDemo = () => {
             </p>
           </a>
         </div>
-        <div style={{overflow:"hidden", display: "flex", flexDirection:"row", alignItems:"center", justifyContent:"space-between"}}>
-          <p style={{paddingRight: "500px", marginBottom: "3rem", fontSize: "2rem", fontWeight: "600"}} >Career history</p>
-          <p style={{ marginBottom: "3rem", fontSize: "2rem", fontWeight: "600" }}>Photojournalism</p>
-        </div> 
-        
-        <div style={{display: "flex", flexDirection:"row", overflow:"hidden"}}>
+        <div>
+        <p style={{paddingTop:"20px",paddingBottom:"40px",fontSize: "2rem", fontWeight: "600", textAlign:"center" }} >Career history</p>
           <BentoGridDemo/>    
-          <ParallaxScrollDemo />
+          <br/>
+          <p style={{ paddingTop:"20px",fontSize: "2rem", fontWeight: "600", textAlign:"center" }}>Photo Journalism</p>
+          <div style={{position:"relative"}}>
+            <LayoutGridDemo cards={imageObjects}/>
+          </div>
         </div>
       </div>
     </div>
-  );
-};
-
-// Peerlist logo
-const Badge = ({ className }: { className?: string }) => {
-  return (
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 56 56"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-    >
-      {/* <path
-        d="M56 28C56 43.464 43.464 56 28 56C12.536 56 0 43.464 0 28C0 12.536 12.536 0 28 0C43.464 0 56 12.536 56 28Z"
-        fill="#00AA45"
-      ></path>
-      <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
-        d="M28 54C42.3594 54 54 42.3594 54 28C54 13.6406 42.3594 2 28 2C13.6406 2 2 13.6406 2 28C2 42.3594 13.6406 54 28 54ZM28 56C43.464 56 56 43.464 56 28C56 12.536 43.464 0 28 0C12.536 0 0 12.536 0 28C0 43.464 12.536 56 28 56Z"
-        fill="#219653"
-      ></path>
-      <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
-        d="M27.0769 12H15V46H24.3846V38.8889H27.0769C34.7305 38.8889 41 32.9048 41 25.4444C41 17.984 34.7305 12 27.0769 12ZM24.3846 29.7778V21.1111H27.0769C29.6194 21.1111 31.6154 23.0864 31.6154 25.4444C31.6154 27.8024 29.6194 29.7778 27.0769 29.7778H24.3846Z"
-        fill="#24292E"
-      ></path>
-      <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
-        d="M18 11H29.0769C36.2141 11 42 16.5716 42 23.4444C42 30.3173 36.2141 35.8889 29.0769 35.8889H25.3846V43H18V11ZM25.3846 28.7778H29.0769C32.1357 28.7778 34.6154 26.39 34.6154 23.4444C34.6154 20.4989 32.1357 18.1111 29.0769 18.1111H25.3846V28.7778Z"
-        fill="white"
-      ></path>
-      <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
-        d="M17 10H29.0769C36.7305 10 43 15.984 43 23.4444C43 30.9048 36.7305 36.8889 29.0769 36.8889H26.3846V44H17V10ZM19 12V42H24.3846V34.8889H29.0769C35.6978 34.8889 41 29.7298 41 23.4444C41 17.1591 35.6978 12 29.0769 12H19ZM24.3846 17.1111H29.0769C32.6521 17.1111 35.6154 19.9114 35.6154 23.4444C35.6154 26.9775 32.6521 29.7778 29.0769 29.7778H24.3846V17.1111ZM26.3846 19.1111V27.7778H29.0769C31.6194 27.7778 33.6154 25.8024 33.6154 23.4444C33.6154 21.0864 31.6194 19.1111 29.0769 19.1111H26.3846Z"
-        fill="#24292E"
-      ></path> */}
-    </svg>
   );
 };
 

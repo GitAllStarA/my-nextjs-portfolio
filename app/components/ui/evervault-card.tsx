@@ -101,7 +101,7 @@ export const generateRandomString = (length: number) => {
   return result;
 };
 
-const skillsString: string[] = ["Jai Shri Raam" ,"Jai Hanuman", "Jai Limbadri Narasimha Swami", "Om Namah Shivaya", "Jai Shri Krishna", "Om Sham Shanischarya Namaha", "Jai Matadi" ,"Java", "Gaming", "Volley Ball", "Artificial Intelligence", "Xbox", "Red Dead Redemption 2", "Forza 5", "GTA V", 
+const skillsString: string[] = ["Hi Mom", "Hi Dad","Jai Shri Raam" ,"Jai Hanuman", "Jai Limbadri Narasimha Swami", "Om Namah Shivaya", "Jai Shri Krishna", "Om Sham Shanischarya Namaha", "Jai Matadi" ,"Java", "Gaming", "Volley Ball", "Artificial Intelligence", "Xbox", "Red Dead Redemption 2", "Forza 5", "GTA V", 
 "React", "Angular", "Machine Learning", "Cloud Computing", "AWS", "Azure", "GCP","JavaScript", "TypeScript", "CSS","HTML",
 "Tailwindcss", "Xcode", "Spring boot", "Spring", "Hibernate", "Docker", "Kubernetes", "Redis", "Mongo", "Mysql", "Git", "Gihub", "SpaCy3.0",
 "Postman", "VScode", "IntelliJ", "Jupyter", "Python", "Shell", "PowerShell", "Nginix", "kafka", "Agile", "MySQL", "JUnit", "LWC", "Apex", "Netflix Zuul",
@@ -120,7 +120,8 @@ const generateRandomSkillString = (length: number) => {
     if(str === "Jack of All Trades, Master of none")
     {
       result.push(">>>>> "+str.toLocaleUpperCase()+" <<<<<")
-    } else {
+    } 
+    else {
     result.push(' '+str+' ');
     }
   }
