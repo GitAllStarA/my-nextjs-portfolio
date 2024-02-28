@@ -27,25 +27,37 @@ export const MacbookScrollDemo = () => {
     );
   };
 
-  let count:number = 0;
+  let count:number = 3;
+  let nextCount:number  = 0;
   let style: string = "";
   imageObjects = myImages.map((img, index) => {
     if (index === count){
-      style = "md:col-span-2";
-      count += 3;
-    } else {
+      style = "col-span-2";
+      nextCount = count+1;
+    } 
+    else if(index === nextCount) {
+      count = nextCount+3;
+      style = "col-span-2";
+    } 
+    else 
+    {
       style = "col-span-1";
     }
     let x = {
       id: index,
       className: style,
-      thumbnail: img,
+      thumbnail: img.src,
+      width: img.width,
+      height: img.height,
       content: <SkeletonOne/>
     };
+    // console.log(`count: `, count);
+    // console.log(`nextc `,nextCount);
+    // console.log(img.src, img.width, img.height)
     return x;
   });
 
-  imageObjects = imageObjects.slice(0, 10);
+  //imageObjects = imageObjects.slice(0, 10);
 
 
 

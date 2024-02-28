@@ -8,6 +8,8 @@ interface Cards {
     content: React.ReactNode;
     className: string;
     thumbnail: string;
+    width: number;
+    height: number;
 }
 
 

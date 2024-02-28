@@ -9,13 +9,19 @@ type Card = {
   content: JSX.Element | React.ReactNode | string;
   className: string;
   thumbnail: string;
+  width: number;
+  height: number;
 };
 
 export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
+
+
   const [selected, setSelected] = useState<Card | null>(null);
   const [lastSelected, setLastSelected] = useState<Card | null>(null);
 
-  const handleClick = (card: Card) => {
+  const handleClick = (card: Card, event) => {
+    console.log(`ere`, card.thumbnail, card.height, card.width)
+
     setLastSelected(selected);
     setSelected(card);
   };
@@ -26,16 +32,16 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   };
 
   return (
-    <div className="w-full h-full p-10 grid grid-cols-1 md:grid-cols-3  max-w-7xl mx-auto gap-4 ">
+    <div style={{height: "1800px", width: "980px"}} className="p-10 grid grid-cols-1 md:grid-cols-3  mx-auto gap-4">
       {cards.map((card, i) => (
         <div key={i} className={cn(card.className, "")}>
           <motion.div
-            onClick={() => handleClick(card)}
+            onClick={(event) => handleClick(card,event)}
             className={cn(
               card.className,
               "relative overflow-hidden",
               selected?.id === card.id
-                ? "rounded-lg cursor-pointer absolute inset-0 h-1/2 w-full md:w-1/2 m-auto z-50 flex justify-center items-center flex-wrap flex-col"
+                ? "rounded-lg cursor-pointer absolute inset-0 md:w-1/2 h-1/2 m-auto z-50 flex justify-center items-center flex-wrap flex-col"
                 : lastSelected?.id === card.id
                 ? "z-40 bg-white rounded-xl h-full w-full"
                 : "bg-white rounded-xl h-full w-full"
@@ -43,7 +49,8 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
             layout
           >
             {selected?.id === card.id && <SelectedCard selected={selected} />}
-            <BlurImage card={card} />
+            <div style={{height:"max-content", width:"max-content", }}><BlurImage card={card} /></div>
+            
           </motion.div>
         </div>
       ))}
@@ -64,8 +71,8 @@ const BlurImage = ({ card }: { card: Card }) => {
   return (
     <Image
       src={card.thumbnail}
-      height="1500"
-      width="1500"
+      height={Number(card.height)} // Convert height to number
+      width={Number(card.width)} // Convert width to number
       onLoad={() => setLoaded(true)}
       className={cn(
         "object-cover object-top absolute inset-0 h-full w-full transition duration-200",
@@ -108,3 +115,5 @@ const SelectedCard = ({ selected }: { selected: Card | null }) => {
     </div>
   );
 };
+
+
