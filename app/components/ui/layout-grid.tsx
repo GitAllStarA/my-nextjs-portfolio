@@ -18,7 +18,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   const [lastSelected, setLastSelected] = useState<Card | null>(null);
   const [selectedDimensions, setSelectedDimensions] = useState({ h: 0, w: 0 });
 
-  const handleClick = (card: Card, event) => {
+  const handleClick = (card: Card, event: Event) => {
     setSelectedDimensions({ h: card.height, w: card.width });
     setLastSelected(selected);
     setSelected(card);
