@@ -9,17 +9,17 @@ type Card = {
   content: JSX.Element | React.ReactNode | string;
   className: string;
   thumbnail: string;
-  width: number;
-  height: number;
+  width: number | undefined;
+  height: number | undefined;
 };
 
 export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   const [selected, setSelected] = useState<Card | null>(null);
   const [lastSelected, setLastSelected] = useState<Card | null>(null);
-  const [selectedDimensions, setSelectedDimensions] = useState({ h: 0, w: 0 });
+  //const [selectedDimensions, setSelectedDimensions] = useState({ h: 0, w: 0 });
 
-  const handleClick = (card: Card, event: Event) => {
-    setSelectedDimensions({ h: card.height, w: card.width });
+  const handleClick = (card: Card) => {
+    //setSelectedDimensions({ h: card.height, w: card.width });
     setLastSelected(selected);
     setSelected(card);
   };
@@ -37,7 +37,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
       {cards.map((card, i) => (
         <div key={i} className={cn(card.className, "")}>
           <motion.div
-            onClick={(event) => handleClick(card, event)}
+            onClick={(event) => handleClick(card)}
             className={cn(
               card.className,
               "relative overflow-hidden",
