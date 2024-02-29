@@ -5,7 +5,11 @@ import { TextGenerateEffect } from "../app/components/ui/text-generate-effect";
 // const word2 = `As always Jack of all trades, Master of none`;
 
 export function TextGenerateEffectDemo({ words }: { words: string }) {
-  return <TextGenerateEffect words={words} />;
+  return (
+    <div>
+      <TextGenerateEffect words={words} />
+    </div>
+  );
 }
 
 export default TextGenerateEffectDemo;

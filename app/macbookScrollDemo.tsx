@@ -6,9 +6,8 @@ import { BentoGridDemo } from "./bentoGridDemo";
 import { TextGenerateEffectDemo } from "./textGenerationEffectDemo";
 import { WavyBackgroundDemo } from "./wavyBackgroundDemo";
 import { ParallaxScrollDemo } from "./parallaxScrollDemoo";
-import { LayoutGridDemo }from "./layoutGridDemo";
-import {ImageLoop} from "./imageLoop";
-
+import { LayoutGridDemo } from "./layoutGridDemo";
+import { ImageLoop } from "./imageLoop";
 
 export const MacbookScrollDemo = () => {
   let myImages = ImageLoop();
@@ -17,30 +16,27 @@ export const MacbookScrollDemo = () => {
   const SkeletonOne = () => {
     return (
       <div>
-        <p className="font-bold text-4xl text-white">House in the woods</p>
-        <p className="font-normal text-base text-white"></p>
-        <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-          A serene and tranquil retreat, this house in the woods offers a peaceful
-          escape from the hustle and bustle of city life.
+        <p className="text-4xl font-bold text-white">House in the woods</p>
+        <p className="text-base font-normal text-white"></p>
+        <p className="my-4 max-w-lg text-base font-normal text-neutral-200">
+          A serene and tranquil retreat, this house in the woods offers a
+          peaceful escape from the hustle and bustle of city life.
         </p>
       </div>
     );
   };
 
-  let count:number = 3;
-  let nextCount:number  = 0;
+  let count: number = 3;
+  let nextCount: number = 0;
   let style: string = "";
   imageObjects = myImages.map((img, index) => {
-    if (index === count){
+    if (index === count) {
       style = "col-span-2";
-      nextCount = count+1;
-    } 
-    else if(index === nextCount) {
-      count = nextCount+3;
+      nextCount = count + 1;
+    } else if (index === nextCount) {
+      count = nextCount + 3;
       style = "col-span-2";
-    } 
-    else 
-    {
+    } else {
       style = "col-span-1";
     }
     let x = {
@@ -49,7 +45,7 @@ export const MacbookScrollDemo = () => {
       thumbnail: img.src,
       width: img.width,
       height: img.height,
-      content: <SkeletonOne/>
+      content: <SkeletonOne />,
     };
     // console.log(`count: `, count);
     // console.log(`nextc `,nextCount);
@@ -59,16 +55,26 @@ export const MacbookScrollDemo = () => {
 
   //imageObjects = imageObjects.slice(0, 10);
 
-
-
-  const words= ` Hello there! I'm a Motivated Software Engineer and AI/ML Enthusiast with over 5+ years of experience in React, Angular, Lightning Web Components, and Java Springboot. I'm also passionate about photography. Currently, I'm seeking a challenging role to leverage my expertise in Web services, software design, cloud computing, and troubleshooting within a dynamic and collaborative team`;
-   return (
+  const words = ` Hello there! I'm a Motivated Software Engineer and AI/ML Enthusiast with over 5+ years of experience in React, Angular, Lightning Web Components, and Java Springboot. I'm also passionate about photography. Currently, I'm seeking a challenging role to leverage my expertise in Web services, software design, cloud computing, and troubleshooting within a dynamic and collaborative team`;
+  return (
     <div>
-      <div className="overflow-hidden dark:bg-[rgba(11, 11, 15, 0.5)] bg-[rgba(255, 255, 255, 0.5)] w-full">
-        <MacbookScroll title={ <TextGenerateEffectDemo words={words}/> }/>
+      <div className="dark:bg-[rgba(11, 11, 15, 0.5)] bg-[rgba(255, 255, 255, 0.5)] w-full overflow-hidden">
+        <MacbookScroll
+          title={
+            <div
+              style={{
+                width: "100vh",
+                justifyContent: "center",
+                textAlign: "center",
+              }}
+            >
+              <TextGenerateEffectDemo words={words} />
+            </div>
+          }
+        />
       </div>
       <div className="flex min-h-screen flex-col items-center justify-between p-24">
-        <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
+        <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
           <a
             href="https://www.linkedin.com/in/vikranth-a-5898281b2/"
             className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
@@ -87,8 +93,8 @@ export const MacbookScrollDemo = () => {
           </a>
           <a
             href="https://open.spotify.com/user/31kkf3qyprjjmhecrp2zkgcqysda"
-            className="group rounded-lg border border-transparent px-5 py-4 
-               transition-colors hover:border-gray-300 hover:bg-gray-100 
+            className="group rounded-lg border border-transparent px-5 py-4
+               transition-colors hover:border-gray-300 hover:bg-gray-100
                hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
             target="_blank"
             rel="noopener noreferrer"
@@ -99,7 +105,7 @@ export const MacbookScrollDemo = () => {
                 -&gt;
               </span>
             </h2>
-            <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
+            <p className={`m-0 max-w-[30ch] text-balance text-sm opacity-50`}>
               My spotify playlist
             </p>
           </a>
@@ -116,7 +122,6 @@ export const MacbookScrollDemo = () => {
               </span>
             </h2>
             <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-
               GitHub, where you can find all my trades
             </p>
           </a>
@@ -128,27 +133,46 @@ export const MacbookScrollDemo = () => {
             rel="noopener noreferrer"
           >
             <h2 className={`mb-3 text-2xl font-semibold`}>
-              Components {" "}
+              Components{" "}
               <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                 -&gt;
               </span>
             </h2>
             <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-              Copy paste the most trending components and use them in your websites.
+              Copy paste the most trending components and use them in your
+              websites.
             </p>
           </a>
         </div>
         <div>
-        <p style={{paddingTop:"20px",paddingBottom:"40px",fontSize: "2rem", fontWeight: "600", textAlign:"center" }} >Career history</p>
-          <BentoGridDemo/>    
-          <br/>
-          <p style={{ paddingTop:"20px",fontSize: "2rem", fontWeight: "600", textAlign:"center" }}>Photo Journalism</p>
-          <div style={{position:"relative"}}>
-            <LayoutGridDemo cards={imageObjects}/>
+          <p
+            style={{
+              paddingTop: "20px",
+              paddingBottom: "40px",
+              fontSize: "2rem",
+              fontWeight: "600",
+              textAlign: "center",
+            }}
+          >
+            Career history
+          </p>
+          <BentoGridDemo />
+          <br />
+          <p
+            style={{
+              paddingTop: "20px",
+              fontSize: "2rem",
+              fontWeight: "600",
+              textAlign: "center",
+            }}
+          >
+            Photo Journalism
+          </p>
+          <div style={{ position: "relative" }}>
+            <LayoutGridDemo cards={imageObjects} />
           </div>
         </div>
       </div>
     </div>
   );
 };
-
