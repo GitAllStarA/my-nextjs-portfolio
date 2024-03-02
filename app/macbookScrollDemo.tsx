@@ -158,7 +158,7 @@ export const MacbookScrollDemo = () => {
           </p>
           <BentoGridDemo />
           <br />
-          <p
+          {/* <p
             style={{
               paddingTop: "20px",
               fontSize: "2rem",
@@ -170,7 +170,7 @@ export const MacbookScrollDemo = () => {
           </p>
           <div style={{ position: "relative" }}>
             <LayoutGridDemo cards={imageObjects} />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
