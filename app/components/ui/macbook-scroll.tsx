@@ -70,7 +70,7 @@ export const MacbookScroll = ({
   return (
     <div
       ref={ref}
-      className="md:py-31  flex min-h-[150vh] flex-shrink-0 scale-[0.35] transform flex-col items-center justify-start py-0 [perspective:800px]  sm:scale-50 md:scale-100"
+      className="md:py-31  flex min-h-[2000px] flex-shrink-0 scale-[0.35] transform flex-col items-center justify-start py-0 [perspective:800px]  sm:scale-50 md:scale-100"
     >
       <EvervaultCardDemo />
       <motion.h2
