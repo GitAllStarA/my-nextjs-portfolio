@@ -33,6 +33,7 @@ export default function Home() {
             </a>
           </div>
           <div className="mb-20 text-center text-3xl font-bold text-neutral-800 dark:text-white">
+            {/* link not yet working */}
             <Link href="/tracingBeamDemo">photojournalism</Link>
           </div>
 
