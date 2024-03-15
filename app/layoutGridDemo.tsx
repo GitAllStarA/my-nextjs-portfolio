@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import { LayoutGrid } from "../app/components/ui/layout-grid";
-import { ImageLoop } from "./imageLoop";
 
 interface Cards {
   id: number;

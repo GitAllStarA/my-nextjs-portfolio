@@ -7,10 +7,10 @@ import { TextGenerateEffectDemo } from "./textGenerationEffectDemo";
 import { WavyBackgroundDemo } from "./wavyBackgroundDemo";
 import { ParallaxScrollDemo } from "./parallaxScrollDemoo";
 import { LayoutGridDemo } from "./layoutGridDemo";
-import { ImageLoop } from "./imageLoop";
+//import { ImageLoop } from "./imageLoop";
 
 export const MacbookScrollDemo = () => {
-  let myImages = ImageLoop();
+  let myImages: any[] = [];
   let imageObjects = [];
 
   const SkeletonOne = () => {
@@ -29,6 +29,7 @@ export const MacbookScrollDemo = () => {
   let count: number = 3;
   let nextCount: number = 0;
   let style: string = "";
+  if (myImages.length > 0){
   imageObjects = myImages.map((img, index) => {
     if (index === count) {
       style = "col-span-2";
@@ -51,7 +52,8 @@ export const MacbookScrollDemo = () => {
     // console.log(`nextc `,nextCount);
     // console.log(img.src, img.width, img.height)
     return x;
-  });
+  })
+};
 
   //imageObjects = imageObjects.slice(0, 10);
 

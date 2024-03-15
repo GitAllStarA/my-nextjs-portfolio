@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { TracingBeamDemo } from "./TracingBeamDemo";
+import  TracingBeamDemo  from "./TracingBeamDemo";
 
 const TracingBeamPhotoJournalism = () => {
   const router = useRouter();
