@@ -57,7 +57,7 @@ export const MacbookScrollDemo = () => {
 
   //imageObjects = imageObjects.slice(0, 10);
 
-  const words = ` Hello there! I'm a Motivated Software Engineer and AI/ML Enthusiast with over 5+ years of experience in React, Angular, Lightning Web Components, and Java Springboot. I'm also passionate about photography. Currently, I'm seeking a challenging role to leverage my expertise in Web services, software design, cloud computing, and troubleshooting within a dynamic and collaborative team`;
+  const words = ` Hello there! I'm a Motivated Software Engineer and AI/ML Enthusiast and I work on React, Angular, Lightning Web Components, MuleSoft, Spring and Java Programming Technologies. I'm also passionate about photography. Currently, I'm seeking a challenging role to leverage my expertise in Web services, software design, cloud computing, and troubleshooting within a dynamic and collaborative team`;
   return (
     <div>
       <div className="dark:bg-[rgba(11, 11, 15, 0.5)] bg-[rgba(255, 255, 255, 0.5)] w-full overflow-hidden">
