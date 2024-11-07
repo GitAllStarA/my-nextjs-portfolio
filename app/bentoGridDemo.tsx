@@ -42,7 +42,7 @@ const Skeleton = () => (
 // }
 
 const items = [
-  {
+ /* {
     title: "Java Application Developer",
     description: "Kicked off an awesome venture with Accenture, teaming up with end clients to tackle cool projects and roll out fresh features. Excited to dive into new tech and keep the learning vibes going strong!",
     header: 
@@ -57,9 +57,9 @@ const items = [
   ,
     // badge: <Link href="accenture.svg"/>,
     icon: <IconBoxAlignTopLeft className="h-4 w-4 text-neutral-500" />,
-  },
+  },*/
  
-  {
+/*  {
     title: "Application Support Analyst",
     description: "During my time at BNY Mellon, I worked on a vital in-house project: a User Access Management Application. The application, integral to identity governance, ...",
     header:
@@ -73,7 +73,7 @@ const items = [
 ,
     // badge: <Image src="/bnym.svg"/>,
     icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
-  },
+  } ,
   {
     title: "Software Engineer",
     description: "At Cerner Corp, I was in the development of an application called Camera Capture. This project was a fusion of Ruby for scripting, Docker for isolated testing environments, ...",
@@ -88,7 +88,7 @@ const items = [
   ,
     // badge: <Link href="cerner.svg"/>,
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
-  },
+  } ,*/
   {
     title: "Masters in Computer and Information Sciences",
     description:
@@ -120,7 +120,7 @@ const items = [
     icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
   },
 
-  {
+ /* {
     title: "Software Intern",
     description: "Developed a Web based application, to rent a vehicle, and vehicle tracking using Google Maps API. Used HTML, CSS, Bootstrap, JavaScript, Java Springboot,MySQL Database, ...",
     header: 
@@ -135,7 +135,7 @@ const items = [
   ,
     // badge: <Link href="allit_sro_logo.svg"/>,
     icon: <IconArrowWaveRightUp className="h-4 w-4 text-neutral-500" />,
-  },
+  }, */
   {
     title: "Bachelors in Information Technology and Engineering",
     description: "Earned a Bachelor's degree in Information Technology and Engineering from Jawaharlal Nehru Technological University, gaining comprehensive knowledge and skills in IT and engineering disciplines",
