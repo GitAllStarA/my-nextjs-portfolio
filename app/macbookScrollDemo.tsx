@@ -94,7 +94,7 @@ export const MacbookScrollDemo = () => {
             </p>
           </a>
           <a
-            href="https://open.spotify.com/user/31kkf3qyprjjmhecrp2zkgcqysda"
+            href="https://open.spotify.com/user/31s34uu4alcnqjeerj7ardsu2zt4"
             className="group rounded-lg border border-transparent px-5 py-4
                transition-colors hover:border-gray-300 hover:bg-gray-100
                hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
