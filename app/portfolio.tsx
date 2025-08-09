@@ -17,7 +17,7 @@ export const Portfolio = () => {
           </a>
         </div>
         <div className="mb-20 text-center text-3xl font-bold text-neutral-800 dark:text-white">
-          photojournalism
+          Photography
         </div>
         <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white lg:static lg:h-auto lg:w-auto lg:bg-none dark:from-black dark:via-black">
           <a
