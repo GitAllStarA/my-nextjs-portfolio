@@ -1,15 +1,15 @@
 # Multi-stage Dockerfile for Next.js Portfolio
 
 # Stage 1: Build stage
-FROM node:20-alpine AS builder
+FROM node:22.21.1-alpine AS builder
 
 WORKDIR /app
 
 # Copy package files
 COPY package.json package-lock.json* ./
 
-# Install dependencies
-RUN npm ci
+# Install dependencies (uses `npm i` as requested)
+RUN npm i
 
 # Copy project files
 COPY . .
@@ -18,7 +18,7 @@ COPY . .
 RUN npm run build
 
 # Stage 2: Runtime stage
-FROM node:20-alpine
+FROM node:22.21.1-alpine
 
 WORKDIR /app
 
@@ -38,5 +38,5 @@ EXPOSE 3000
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
   CMD node -e "require('http').get('http://localhost:3000', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"
 
-# Start the application
+# Start the application (production)
 CMD ["npm", "start"]
