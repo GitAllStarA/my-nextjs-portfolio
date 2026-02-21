@@ -23,7 +23,7 @@ FROM node:22.21.1-alpine
 WORKDIR /app
 
 # Set NODE_ENV to production
-ENV NODE_ENV=production
+ENV NODE_ENV=development
 
 # Copy only necessary files from builder
 COPY --from=builder /app/package.json package-lock.json* ./
