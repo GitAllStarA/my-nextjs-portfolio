@@ -4,10 +4,11 @@ metadata:
   name: portfolio-config
 data:
   .env: |     
-    NODE_ENV=production
-    HELLO=WORLD
-    DEV_NAME=VIKRANTH REDDY ALTI
-    FAV_FRUIT=PAPAYA
-    API_URL=http://localhost:30080
+    NEXT_PUBLIC_NODE_ENV=production
+    NEXT_PUBLIC_HELLO=WORLD
+    NEXT_PUBLIC_DEV_NAME=VIKRANTH REDDY ALTI
+    NEXT_PUBLIC_FAV_FRUIT=PAPAYA
+    NEXT_PUBLIC_API_URL=http://localhost:30080
     THEME_COLOR=dark
-    FAV_TEAM=Williams, Mercedes, McLaren, Redbull, Ferrari
+    NEXT_PUBLIC_FAV_TEAM=Williams, Mercedes, McLaren, Redbull, Ferrari
+    SERVER_SIDE_NODE=22

@@ -65,7 +65,7 @@ export const MacbookScrollDemo = () => {
     noStore(); // <--- Forces this to run dynamically on the server!
     return {
       data: {
-        envFavTeam: process.env.FAV_TEAM === 'true', // Reads from the mounted .env.local file
+        envFavTeam: process.env.NEXT_PUBLIC_FAV === 'true', // Reads from the mounted .env.local file
       }
     };
   }
@@ -78,7 +78,9 @@ export const MacbookScrollDemo = () => {
   }
   
   const val = envVar();
-  console.log(val);
+  console.log(process.env.NEXT_PUBLIC_FAV_TEAM);
+
+    console.log(process.env.FAV);
 
   return (
     <div>
@@ -93,6 +95,7 @@ export const MacbookScrollDemo = () => {
               }}
             >
               <TextGenerateEffectDemo words={words} />
+              <TextGenerateEffectDemo words={`my fav formula 1 teams ${process.env.NEXT_PUBLIC_FAV_TEAM}`} />
             </div>
           }
         />
