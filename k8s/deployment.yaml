@@ -18,6 +18,15 @@ spec:
         imagePullPolicy: Never   # CRITICAL: Tells K8s to use your local Mac Docker image
         ports:
         - containerPort: 3000     # Change this if your app runs on a different port (e.g., 3000, 8080)
-        envFrom:
-        - configMapRef:
-            name: portfolio-config
+        volumeMounts:
+        - mountPaths: /app/.env.local
+          name: env-volume
+          subPath: .env.local
+          readOnly: true
+      volumes:
+      - name: env-volume
+        configMap:
+          name: portfolio-config
+          itmes:
+          - key: .env
+            path: .env.local
