@@ -16,6 +16,7 @@ pipeline {
                 withKubeConfig([credentialsId: 'local-k8s-config']) {
                     sh 'kubectl apply --insecure-skip-tls-verify=true -f k8s/'
                     sh 'kubectl apply --insecure-skip-tls-verify=true -f k8s/csr'
+                    sh 'kubectl rollout restart deployment portfolio-app'
                 }
             }
         }
