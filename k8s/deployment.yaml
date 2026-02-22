@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portfolio-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: portfolio
+  template:
+    metadata:
+      labels:
+        app: portfolio
+    spec:
+      containers:
+      - name: my-portfolio-container
+        image: my-portfolio:latest
+        imagePullPolicy: Never   # CRITICAL: Tells K8s to use your local Mac Docker image
+        ports:
+        - containerPort: 3000     # Change this if your app runs on a different port (e.g., 3000, 8080)
