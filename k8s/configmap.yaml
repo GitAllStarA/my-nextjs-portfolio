@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: portfolio-config
+data:
+  # Add your environment variables here
+  NODE_ENV: "production"
+  HELLO: "WORLD"
+  DEV_NAME: "VIKRANTH REDDY ALTI"
+  FAV_FRUIT: "PAPAYA"
+  API_URL: "http://localhost:30080"
+  THEME_COLOR: "dark"
