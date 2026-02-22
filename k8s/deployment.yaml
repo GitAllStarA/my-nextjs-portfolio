@@ -27,6 +27,6 @@ spec:
       - name: env-volume
         configMap:
           name: portfolio-config
-          itmes:
+          items:
           - key: .env
             path: .env.local
