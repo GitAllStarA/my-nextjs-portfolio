@@ -8,6 +8,8 @@ import { WavyBackgroundDemo } from "./wavyBackgroundDemo";
 import { ParallaxScrollDemo } from "./parallaxScrollDemoo";
 import { LayoutGridDemo } from "./layoutGridDemo";
 //import { ImageLoop } from "./imageLoop";
+import { unstable_noStore as noStore } from 'next/cache';
+
 
 export const MacbookScrollDemo = () => {
   let myImages: any[] = [];
@@ -29,36 +31,55 @@ export const MacbookScrollDemo = () => {
   let count: number = 3;
   let nextCount: number = 0;
   let style: string = "";
-  if (myImages.length > 0){
-  imageObjects = myImages.map((img, index) => {
-    if (index === count) {
-      style = "col-span-2";
-      nextCount = count + 1;
-    } else if (index === nextCount) {
-      count = nextCount + 3;
-      style = "col-span-2";
-    } else {
-      style = "col-span-1";
-    }
-    let x = {
-      id: index,
-      className: style,
-      thumbnail: img.src,
-      width: img.width,
-      height: img.height,
-      content: <SkeletonOne />,
-    };
-    // console.log(`count: `, count);
-    // console.log(`nextc `,nextCount);
-    // console.log(img.src, img.width, img.height)
-    return x;
-  })
-};
+  if (myImages.length > 0) {
+    imageObjects = myImages.map((img, index) => {
+      if (index === count) {
+        style = "col-span-2";
+        nextCount = count + 1;
+      } else if (index === nextCount) {
+        count = nextCount + 3;
+        style = "col-span-2";
+      } else {
+        style = "col-span-1";
+      }
+      let x = {
+        id: index,
+        className: style,
+        thumbnail: img.src,
+        width: img.width,
+        height: img.height,
+        content: <SkeletonOne />,
+      };
+      // console.log(`count: `, count);
+      // console.log(`nextc `,nextCount);
+      // console.log(img.src, img.width, img.height)
+      return x;
+    })
+  };
 
   //imageObjects = imageObjects.slice(0, 10);
 
   const words = ` Hello there! I'm a Motivated Software Engineer and AI/ML Enthusiast and I work on React, Angular, Lightning Web Components, MuleSoft, Spring and Java Programming Technologies. I'm also passionate about photography. Currently, I'm seeking a challenging role to leverage my expertise in Web services, software design, cloud computing, and troubleshooting within a dynamic and collaborative team`;
-  const words2 = process.env.FAV_TEAM + '';
+
+  async function get() {
+    noStore(); // <--- Forces this to run dynamically on the server!
+    return {
+      data: {
+        envFavTeam: process.env.FAV_TEAM === 'true', // Reads from the mounted .env.local file
+      }
+    };
+  }
+
+  async function envVar() {
+    const response = await get();
+    const words2 = response.data.envFavTeam;
+
+    return <div>{String(words2)}</div>;
+  }
+  
+  const val = envVar();
+  console.log(val);
+
   return (
     <div>
       <div className="dark:bg-[rgba(11, 11, 15, 0.5)] bg-[rgba(255, 255, 255, 0.5)] w-full overflow-hidden">
@@ -72,7 +93,6 @@ export const MacbookScrollDemo = () => {
               }}
             >
               <TextGenerateEffectDemo words={words} />
-              <TextGenerateEffectDemo words={words2} /> 
             </div>
           }
         />
