@@ -20,4 +20,4 @@ spec:
         - containerPort: 3000     # Change this if your app runs on a different port (e.g., 3000, 8080)
         envFrom:
         - configMapRef:
-          name: portfolio-config
+            name: portfolio-config
