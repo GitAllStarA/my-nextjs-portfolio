@@ -14,7 +14,7 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 withKubeConfig([credentialsId: 'local-k8s-config']) {
-                    sh 'kubectl apply -f k8s/'
+                    sh 'kubectl apply --insecure-skip-tls-verify=true -f k8s/'
                 }
             }
         }
