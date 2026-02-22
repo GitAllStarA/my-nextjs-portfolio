@@ -10,3 +10,4 @@ data:
   FAV_FRUIT: "PAPAYA"
   API_URL: "http://localhost:30080"
   THEME_COLOR: "dark"
+  FAV_TEAM: "Williams, Mercedes, McLaren, Redbull, Ferrari"
