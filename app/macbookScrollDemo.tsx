@@ -74,7 +74,7 @@ export const MacbookScrollDemo = () => {
     const response = await get();
     const words2 = response.data.envFavTeam;
 
-    return <div>{String(words2)}</div>;
+    return words2+' -- ';
   }
   
   const val = envVar();
