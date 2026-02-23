@@ -22,4 +22,10 @@ module.exports = {
     
     return config;
   },
-  };
+
+  publicRuntimeConfig: {
+    NEXT_PUBLIC_FAV_TEAM: process.env.NEXT_PUBLIC_FAV_TEAM,
+    HELLO: process.env.HELLO,
+  }
+};
+

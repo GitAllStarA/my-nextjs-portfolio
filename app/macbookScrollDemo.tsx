@@ -1,14 +1,10 @@
 import React from "react";
 import { MacbookScroll } from "../app/components/ui/macbook-scroll";
-import { MeteorsDemo } from "./meteorsDemo";
-import Link from "next/link";
 import { BentoGridDemo } from "./bentoGridDemo";
 import { TextGenerateEffectDemo } from "./textGenerationEffectDemo";
-import { WavyBackgroundDemo } from "./wavyBackgroundDemo";
-import { ParallaxScrollDemo } from "./parallaxScrollDemoo";
-import { LayoutGridDemo } from "./layoutGridDemo";
 //import { ImageLoop } from "./imageLoop";
-import { unstable_noStore as noStore } from 'next/cache';
+
+export const dynamic = 'force-dynamic';
 
 
 export const MacbookScrollDemo = () => {
@@ -61,26 +57,11 @@ export const MacbookScrollDemo = () => {
 
   const words = ` Hello there! I'm a Motivated Software Engineer and AI/ML Enthusiast and I work on React, Angular, Lightning Web Components, MuleSoft, Spring and Java Programming Technologies. I'm also passionate about photography. Currently, I'm seeking a challenging role to leverage my expertise in Web services, software design, cloud computing, and troubleshooting within a dynamic and collaborative team`;
 
-  async function get() {
-    noStore(); // <--- Forces this to run dynamically on the server!
-    return {
-      data: {
-        envFavTeam: process.env.NEXT_PUBLIC_FAV === 'true', // Reads from the mounted .env.local file
-      }
-    };
-  }
-
-  async function envVar() {
-    const response = await get();
-    const words2 = response.data.envFavTeam;
-
-    return words2+' -- ';
-  }
   
-  const val = envVar();
   console.log(process.env.NEXT_PUBLIC_FAV_TEAM);
 
-    console.log(process.env.FAV);
+  console.log(process.env.FAV);
+
 
   return (
     <div>
